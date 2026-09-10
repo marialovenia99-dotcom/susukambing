@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AEGIS // CYBER.OPS - Komando Pertahanan Siber Militer Nasional</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,300;0,400;0,600;0,700;1,400&amp;family=JetBrains+Mono:wght@300;400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-primary-fixed-variant": "#005226",
+            "on-surface": "#e0e3e5",
+            "outline-variant": "#3b4a3d",
+            "on-tertiary": "#432c00",
+            "primary": "#75ff9e",
+            "on-secondary": "#00363d",
+            "inverse-on-surface": "#2d3133",
+            "inverse-primary": "#006d35",
+            "outline": "#859585",
+            "surface-variant": "#313538",
+            "surface-dim": "#101416",
+            "on-tertiary-fixed": "#281900",
+            "on-secondary-container": "#00616d",
+            "surface-container-lowest": "#0b0f11",
+            "on-surface-variant": "#bacbb9",
+            "surface-bright": "#363a3c",
+            "on-error-container": "#ffdad6",
+            "surface-container-high": "#262b2d",
+            "on-secondary-fixed-variant": "#004f58",
+            "tertiary-container": "#ffbd45",
+            "secondary-fixed-dim": "#00daf3",
+            "error-container": "#93000a",
+            "surface-container": "#1c2022",
+            "primary-container": "#00e676",
+            "secondary": "#bdf4ff",
+            "error": "#ffb4ab",
+            "on-primary-fixed": "#00210b",
+            "surface-container-highest": "#313538",
+            "primary-fixed": "#62ff96",
+            "tertiary-fixed": "#ffdeac",
+            "surface": "#101416",
+            "on-primary": "#003918",
+            "inverse-surface": "#e0e3e5",
+            "on-tertiary-container": "#714d00",
+            "background": "#101416",
+            "on-tertiary-fixed-variant": "#604100",
+            "secondary-fixed": "#9cf0ff",
+            "on-primary-container": "#00612e",
+            "on-error": "#690005",
+            "primary-fixed-dim": "#00e475",
+            "secondary-container": "#00e3fd",
+            "surface-tint": "#00e475",
+            "surface-container-low": "#181c1e",
+            "tertiary": "#ffe0b4",
+            "on-background": "#e0e3e5",
+            "on-secondary-fixed": "#001f24",
+            "tertiary-fixed-dim": "#ffba38"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin-mobile": "16px",
+            "margin-desktop": "48px",
+            "max-width": "1440px",
+            "pad-lg": "24px",
+            "pad-xs": "4px",
+            "grid-unit": "4px",
+            "gutter-desktop": "24px",
+            "gutter-mobile": "12px",
+            "pad-sm": "8px",
+            "pad-2xl": "48px",
+            "pad-md": "16px",
+            "pad-3xl": "64px",
+            "pad-xl": "32px"
+          },
+          "fontFamily": {
+            "display-lg-mobile": ["Space Grotesk"],
+            "headline-xl": ["Space Grotesk"],
+            "headline-lg": ["Space Grotesk"],
+            "label-data": ["JetBrains Mono"],
+            "label-telemetry": ["JetBrains Mono"],
+            "headline-xl-mobile": ["Space Grotesk"],
+            "body-lg": ["Chivo"],
+            "display-lg": ["Space Grotesk"],
+            "headline-sm": ["Space Grotesk"],
+            "label-badge": ["JetBrains Mono"],
+            "body-sm": ["Chivo"],
+            "body-md": ["Chivo"]
+          },
+          "fontSize": {
+            "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "label-data": ["13px", { "lineHeight": "18px", "letterSpacing": "0.06em", "fontWeight": "500" }],
+            "label-telemetry": ["11px", { "lineHeight": "16px", "letterSpacing": "0.12em", "fontWeight": "400" }],
+            "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "label-badge": ["10px", { "lineHeight": "14px", "letterSpacing": "0.18em", "fontWeight": "700" }],
+            "body-sm": ["13px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "body-md": ["15px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "400" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    /* Technical Grid Matrix background pattern */
+    .tactical-grid {
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(59, 74, 61, 0.15) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(59, 74, 61, 0.15) 1px, transparent 1px);
+    }
+    .tactical-dots {
+      background-image: radial-gradient(rgba(117, 255, 158, 0.2) 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+    /* Radar sweep animation */
+    @keyframes radar-sweep {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .animate-radar {
+      animation: radar-sweep 4s linear infinite;
+    }
+    /* Blinking terminal cursor */
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    .terminal-cursor {
+      animation: blink 1s infinite;
+    }
+    /* Custom scanline overlay */
+    .scanline {
+      background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0) 50%, rgba(0, 230, 118, 0.03) 50%, rgba(0, 230, 118, 0.03));
+      background-size: 100% 4px;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased selection:bg-primary selection:text-on-primary min-h-screen flex flex-col relative overflow-x-hidden scanline">
+<!-- TOP MIL-SPEC STATUS TELEMETRY BANNER -->
+<div class="bg-surface-container-lowest border-b border-outline-variant w-full py-1 px-margin-mobile md:px-margin-desktop text-label-telemetry font-label-telemetry flex justify-between items-center z-50">
+<div class="flex items-center gap-4 text-on-surface-variant overflow-hidden whitespace-nowrap">
+<span class="inline-flex items-center text-primary font-bold">
+<span class="inline-block w-1.5 h-1.5 bg-primary-container rounded-full mr-2 animate-pulse"></span>
+        DEFCON 2 // SIAGA TINGGI
+      </span>
+<span class="hidden md:inline text-outline-variant">|</span>
+<span class="hidden md:inline">ENKRIPSI: RSA-4096 / KYBER-1024 QUANTUM POST-SEC</span>
+<span class="hidden lg:inline text-outline-variant">|</span>
+<span class="hidden lg:inline">NODE SATELLITE: AEGIS-ORBIT-09 [GEO: 106.8456° E, -6.2088° S]</span>
+</div>
+<div class="flex items-center gap-3 shrink-0">
+<span class="text-tertiary-container font-label-badge text-label-badge border border-tertiary-container/30 px-1.5 py-0.5">
+        MIL-SPEC LEVEL 4 // TOP SECRET
+      </span>
+<span class="text-primary font-label-data text-label-data" id="utc-clock">00:00:00 UTC</span>
+</div>
+</div>
+<!-- SHARED COMPONENT: TopNavBar (Exact mapping of JSON) -->
+<header class="bg-surface-container-lowest dark:bg-surface-container-lowest border-b border-outline-variant dark:border-outline-variant docked full-width top-0 sticky z-40">
+<div class="w-full max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop flex items-center justify-between h-16">
+<!-- Brand Logo / Product Name -->
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 border border-primary flex items-center justify-center bg-surface-container-low relative">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="security">security</span>
+<span class="absolute -top-1 -right-1 w-1.5 h-1.5 bg-primary-container"></span>
+</div>
+<div>
+<a class="font-headline-sm text-headline-sm font-bold tracking-widest text-primary dark:text-primary uppercase" href="#">
+            AEGIS // CYBER.OPS
+          </a>
+<span class="block font-label-telemetry text-label-telemetry text-on-surface-variant tracking-wider -mt-1">
+            KOMANDO OPERASI PERTAHANAN SIBER NASIONAL
+          </span>
+</div>
+</div>
+<!-- Navigation Links (Active mapping: DEFENSE MATRIX) -->
+<nav class="hidden xl:flex items-center gap-8">
+<a class="text-primary dark:text-primary border-b-2 border-primary font-label-data text-label-data uppercase tracking-wider py-1" href="#matrix">
+          DEFENSE MATRIX
+        </a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-label-data text-label-data uppercase tracking-wider py-1 hover:text-on-surface transition-colors duration-150" href="#topology">
+          TOPOLOGY
+        </a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-label-data text-label-data uppercase tracking-wider py-1 hover:text-on-surface transition-colors duration-150" href="#intercepts">
+          INTERCEPTS
+        </a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-label-data text-label-data uppercase tracking-wider py-1 hover:text-on-surface transition-colors duration-150" href="#logs">
+          MISSION LOGS
+        </a>
+</nav>
+<!-- Trailing Action Cluster -->
+<div class="flex items-center gap-3">
+<!-- DEFCON Badge & Icons -->
+<div class="hidden sm:flex items-center border border-outline-variant bg-surface-container px-2.5 py-1 text-label-badge text-label-badge text-tertiary font-bold tracking-wider">
+          DEFCON 2
+        </div>
+<div class="hidden md:flex items-center gap-1 text-on-surface-variant">
+<button class="p-1.5 hover:bg-surface-container dark:hover:bg-surface-container hover:text-primary dark:hover:text-primary transition-colors duration-150 focus:outline-none focus:ring-1 focus:ring-primary active:bg-surface-container-high" title="Terminal Command">
+<span class="material-symbols-outlined text-sm" data-icon="terminal">terminal</span>
+</button>
+<button class="p-1.5 hover:bg-surface-container dark:hover:bg-surface-container hover:text-primary dark:hover:text-primary transition-colors duration-150 focus:outline-none focus:ring-1 focus:ring-primary active:bg-surface-container-high" title="Security Clearance">
+<span class="material-symbols-outlined text-sm" data-icon="security">security</span>
+</button>
+<button class="p-1.5 hover:bg-surface-container dark:hover:bg-surface-container hover:text-primary dark:hover:text-primary transition-colors duration-150 focus:outline-none focus:ring-1 focus:ring-primary active:bg-surface-container-high" title="Active Radar Stream">
+<span class="material-symbols-outlined text-sm" data-icon="radar">radar</span>
+</button>
+</div>
+<!-- Primary Action Button -->
+<button class="bg-primary-container text-on-primary font-label-data text-label-data font-bold px-3 md:px-4 py-2 uppercase tracking-wider hover:bg-primary transition-colors duration-150 focus:outline-none focus:ring-1 focus:ring-primary active:bg-surface-container-high shrink-0 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base font-bold" data-icon="bolt">bolt</span>
+<span>ENGAGE COUNTERMEASURES</span>
+</button>
+</div>
+</div>
+</header>
+<!-- LIVE THREAT TICKER (Continuous Operational Telemetry Stream) -->
+<div class="bg-surface-container-low border-b border-outline-variant py-2 overflow-hidden w-full relative">
+<div class="w-full max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop flex items-center gap-3">
+<span class="font-label-badge text-label-badge bg-error-container text-error px-2 py-0.5 tracking-wider shrink-0 flex items-center gap-1">
+<span class="w-1.5 h-1.5 bg-error rounded-full animate-ping"></span>
+        INTEL FEED // LIVE
+      </span>
+<div class="overflow-hidden whitespace-nowrap w-full text-label-telemetry font-label-telemetry text-on-surface-variant flex gap-8">
+<div class="inline-flex gap-8 animate-marquee">
+<span class="text-on-surface"><span class="text-primary">[08:44:12Z]</span> INTERSEPSI ANCAMAN ZERO-DAY DI NODE SEKTOR-07 :: PAYLOAD SIGNATURE #A7X9 DINORMALISASI</span>
+<span class="text-outline-variant">///</span>
+<span class="text-on-surface"><span class="text-primary-container">[08:43:55Z]</span> FREKUENSI JAMMING BALASAN DIAKTIFKAN PADA SPEKTRUM 4.88 GHz MIL-SAT</span>
+<span class="text-outline-variant">///</span>
+<span class="text-on-surface"><span class="text-secondary">[08:43:10Z]</span> INTEGRITAS SATELIT UPLINK: 100% OPTIMAL DENGAN DUAL-BAND SYNCHRONIZATION</span>
+<span class="text-outline-variant">///</span>
+<span class="text-on-surface"><span class="text-tertiary-container">[08:42:04Z]</span> STATUS PROTOKOL: SIAGA ELEKTRONIK TINGKAT 2 DI SELURUH INFRASTRUKTUR KRITIS NASIONAL</span>
+</div>
+</div>
+</div>
+</div>
+<!-- MAIN OPERATIONAL CANVAS -->
+<main class="flex-grow w-full max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop py-pad-xl space-y-pad-3xl tactical-grid">
+<!-- HERO SECTION: Tactical HUD & Live Telemetry -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-stretch relative">
+<!-- Crosshair reticle accents -->
+<div class="hidden lg:block absolute -top-4 -left-4 text-primary opacity-40 font-label-telemetry text-label-telemetry">+ 00.00° LAT</div>
+<div class="hidden lg:block absolute -top-4 -right-4 text-primary opacity-40 font-label-telemetry text-label-telemetry">+ 00.00° LNG</div>
+<!-- Left Column: Core Strategic Command Briefing (7 Columns) -->
+<div class="lg:col-span-7 flex flex-col justify-between bg-surface-container-lowest/85 border border-outline-variant p-pad-lg md:p-pad-xl relative backdrop-blur-sm">
+<!-- Corner brackets -->
+<span class="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-primary"></span>
+<span class="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-primary"></span>
+<span class="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-primary"></span>
+<span class="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-primary"></span>
+<div>
+<!-- Operational Status Badge -->
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container border border-primary/40 font-label-badge text-label-badge text-primary tracking-widest mb-pad-md">
+<span class="w-2 h-2 bg-primary-container rounded-full animate-pulse"></span>
+            SISTEM OPERASIONAL AKTIF // GLOBAL THREAT SHIELD ONLINE
+          </div>
+<!-- Headline -->
+<h1 class="font-headline-xl text-headline-xl text-on-surface uppercase font-bold tracking-tight mb-pad-md">
+            INFRASTRUKTUR PERTAHANAN SIBER <span class="text-primary underline decoration-primary/40 underline-offset-8">TAKTIS TINGKAT MILITER</span>
+</h1>
+<!-- Body Description -->
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-pad-xl leading-relaxed">
+            Platform komando pertahanan siber terpadu untuk perlindungan aset strategis nasional, intersepsi serangan siber otonom, dan operasi peperangan elektronik tingkat lanjut dengan ketahanan kriptografi pasca-kuantum.
+          </p>
+</div>
+<!-- Operational Action Group -->
+<div class="space-y-pad-lg pt-pad-md border-t border-outline-variant">
+<div class="flex flex-wrap items-center gap-pad-md">
+<a class="bg-primary-container text-on-primary font-label-data text-label-data font-bold px-6 py-3.5 uppercase tracking-widest hover:bg-primary transition-all duration-150 flex items-center gap-2 shadow-[0_0_16px_rgba(0,230,118,0.3)]" href="#console">
+<span class="material-symbols-outlined text-lg" data-icon="terminal">terminal</span>
+              AKSES KONSOL OPERASI
+            </a>
+<a class="border border-outline hover:border-secondary text-secondary font-label-data text-label-data px-6 py-3.5 uppercase tracking-widest transition-colors duration-150 bg-surface-container/50 flex items-center gap-2" href="#topology">
+<span class="material-symbols-outlined text-lg" data-icon="hub">hub</span>
+              TINJAU TOPOLOGI PERTAHANAN
+            </a>
+</div>
+<!-- Quick Security Verification Hash -->
+<div class="flex items-center justify-between font-label-telemetry text-label-telemetry text-on-surface-variant pt-2 border-t border-outline-variant/40">
+<span>HASH SHA-512 VERIFIKASI: <code class="text-primary">e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495...</code></span>
+<span class="text-primary hidden sm:inline">[INTEGRITAS 100%]</span>
+</div>
+</div>
+</div>
+<!-- Right Column: Live Tactical HUD Telemetry Enclosure (5 Columns) -->
+<div class="lg:col-span-5 bg-surface-container-lowest/90 border border-outline-variant p-pad-lg flex flex-col justify-between relative backdrop-blur-sm">
+<!-- Corner brackets -->
+<span class="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-secondary"></span>
+<span class="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-secondary"></span>
+<span class="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-secondary"></span>
+<span class="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-secondary"></span>
+<!-- Panel Header -->
+<div class="flex items-center justify-between pb-pad-sm border-b border-outline-variant mb-pad-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="radar">radar</span>
+<span class="font-label-badge text-label-badge uppercase tracking-widest text-on-surface">RADAR SPEKTRUM AKTIF</span>
+</div>
+<span class="font-label-telemetry text-label-telemetry text-primary animate-pulse">FEED // 240 FPS</span>
+</div>
+<!-- Radar Display Emulation -->
+<div class="relative w-full h-48 sm:h-56 bg-surface-container-low border border-outline-variant flex items-center justify-center overflow-hidden mb-pad-md">
+<!-- Radial grid circles -->
+<div class="absolute w-44 h-44 rounded-full border border-outline-variant/60"></div>
+<div class="absolute w-28 h-28 rounded-full border border-outline-variant/80"></div>
+<div class="absolute w-12 h-12 rounded-full border border-primary/40"></div>
+<!-- Axis crosshair -->
+<div class="absolute w-full h-px bg-outline-variant/50"></div>
+<div class="absolute h-full w-px bg-outline-variant/50"></div>
+<!-- Rotating Radar Sweep -->
+<div class="absolute w-48 h-48 animate-radar origin-center pointer-events-none" style="background: conic-gradient(from 0deg, rgba(0, 230, 118, 0.3) 0deg, rgba(0, 230, 118, 0) 60deg);"></div>
+<!-- Blips / Target Nodes -->
+<div class="absolute top-1/3 left-1/4 w-2 h-2 bg-primary rounded-full animate-ping"></div>
+<div class="absolute top-1/3 left-1/4 w-1.5 h-1.5 bg-primary rounded-full"></div>
+<span class="absolute top-[30%] left-[28%] font-label-telemetry text-[9px] text-primary">TRG-01 [98.4%]</span>
+<div class="absolute bottom-1/3 right-1/4 w-2 h-2 bg-error rounded-full animate-ping"></div>
+<div class="absolute bottom-1/3 right-1/4 w-1.5 h-1.5 bg-error rounded-full"></div>
+<span class="absolute bottom-[30%] right-[10%] font-label-telemetry text-[9px] text-error">INTERCEPT #89</span>
+<!-- Overlay Coordinates -->
+<div class="absolute bottom-2 left-2 font-label-telemetry text-label-telemetry text-outline">LAT: -06.2088 | LON: 106.8456</div>
+<div class="absolute top-2 right-2 font-label-badge text-label-badge text-secondary">BEARING: 042° TRUE</div>
+</div>
+<!-- Telemetry Counters Matrix -->
+<div class="grid grid-cols-2 gap-pad-sm font-label-telemetry text-label-telemetry">
+<div class="bg-surface-container p-pad-sm border border-outline-variant">
+<span class="block text-on-surface-variant">LATENSI RESPON JARINGAN</span>
+<div class="flex items-baseline gap-1 mt-1">
+<span class="font-headline-lg text-headline-lg font-bold text-primary">12</span>
+<span class="text-on-surface-variant font-label-data">ms</span>
+</div>
+<span class="text-primary font-label-badge text-[9px]">● REALTIME SYNCHRONIZED</span>
+</div>
+<div class="bg-surface-container p-pad-sm border border-outline-variant">
+<span class="block text-on-surface-variant">TINGKAT NETRALISASI</span>
+<div class="flex items-baseline gap-1 mt-1">
+<span class="font-headline-lg text-headline-lg font-bold text-secondary">99.98</span>
+<span class="text-on-surface-variant font-label-data">%</span>
+</div>
+<span class="text-secondary font-label-badge text-[9px]">● ZERO BREACH DETECTED</span>
+</div>
+<div class="bg-surface-container p-pad-sm border border-outline-variant col-span-2">
+<div class="flex justify-between items-start">
+<div>
+<span class="block text-on-surface-variant">SERANGAN DINETRALISASI HARI INI</span>
+<div class="font-headline-lg text-headline-lg font-bold text-on-surface mt-1">
+                  14.852.190 <span class="font-label-data text-label-data text-outline font-normal">PKT</span>
+</div>
+</div>
+<div class="text-right">
+<span class="inline-block px-1.5 py-0.5 bg-primary/10 text-primary border border-primary/30 text-label-badge">
+                  +18.4% HEURISTIK
+                </span>
+</div>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 mt-2 overflow-hidden">
+<div class="bg-primary-container h-full w-[94%]"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: MODULAR DEFENSE CAPABILITIES (Bento Grid) -->
+<section class="space-y-pad-lg" id="matrix">
+<!-- Section Header with Technical Rules -->
+<div class="flex flex-col md:flex-row md:items-end justify-between border-b border-outline-variant pb-pad-md gap-pad-sm">
+<div>
+<div class="flex items-center gap-2 text-primary font-label-badge text-label-badge tracking-widest uppercase">
+<span>[SYS.MOD // MATRIX-CORE]</span>
+<span class="text-outline-variant">///</span>
+<span>KLASIFIKASI MILITER C4ISR</span>
+</div>
+<h2 class="font-headline-xl text-headline-xl font-bold uppercase tracking-tight text-on-surface mt-1">
+            KEMAMPUAN PERTAHANAN MULTI-DOMAIN
+          </h2>
+</div>
+<p class="font-label-telemetry text-label-telemetry text-on-surface-variant max-w-md">
+          Infrastruktur terpusat untuk proteksi elektromagnetik, neutralisasi payload otonom, dan koordinasi komando militer lintas ruang angkasa.
+        </p>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter-desktop">
+<!-- Module 01 -->
+<div class="bg-surface-container-lowest border border-outline-variant p-pad-lg flex flex-col justify-between hover:border-primary transition-all duration-200 group relative">
+<div class="absolute top-2 right-2 text-outline-variant font-label-telemetry text-[10px] group-hover:text-primary">MOD-01</div>
+<div>
+<div class="w-10 h-10 border border-primary/40 bg-surface-container flex items-center justify-center mb-pad-md group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="cell_tower">cell_tower</span>
+</div>
+<span class="font-label-badge text-label-badge text-primary uppercase tracking-widest block mb-1">SPEKTRUM ELEKTROMAGNETIK</span>
+<h3 class="font-headline-sm text-headline-sm font-bold uppercase mb-pad-sm text-on-surface">
+              Peperangan Elektronik &amp; Jamming Spektrum
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-pad-md leading-relaxed">
+              Deteksi penetrasi sinyal RF frekuensi tinggi, netralisasi pemancar liar, dan eksekusi counter-surveillance waktu nyata pada perimeter radar militer.
+            </p>
+</div>
+<div class="pt-pad-sm border-t border-outline-variant/60 flex items-center justify-between font-label-telemetry text-label-telemetry">
+<span class="text-on-surface-variant">COVERAGE: 100 kHz - 95 GHz</span>
+<span class="text-primary flex items-center gap-0.5">AKTIF <span class="w-1.5 h-1.5 bg-primary rounded-full"></span></span>
+</div>
+</div>
+<!-- Module 02 -->
+<div class="bg-surface-container-lowest border border-outline-variant p-pad-lg flex flex-col justify-between hover:border-primary transition-all duration-200 group relative">
+<div class="absolute top-2 right-2 text-outline-variant font-label-telemetry text-[10px] group-hover:text-primary">MOD-02</div>
+<div>
+<div class="w-10 h-10 border border-secondary/40 bg-surface-container flex items-center justify-center mb-pad-md group-hover:bg-secondary/10 transition-colors">
+<span class="material-symbols-outlined text-secondary text-xl" data-icon="memory">memory</span>
+</div>
+<span class="font-label-badge text-label-badge text-secondary uppercase tracking-widest block mb-1">HEURISTIK SARAF OTONOM</span>
+<h3 class="font-headline-sm text-headline-sm font-bold uppercase mb-pad-sm text-on-surface">
+              Intersepsi Ancaman AI Otonom
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-pad-md leading-relaxed">
+              Algoritma pembelajaran mendalam untuk isolasi malware tingkat negara (state-sponsored actor) dan mitigasi serangan DDoS terdistribusi dalam hitungan milidetik.
+            </p>
+</div>
+<div class="pt-pad-sm border-t border-outline-variant/60 flex items-center justify-between font-label-telemetry text-label-telemetry">
+<span class="text-on-surface-variant">RESPON: &lt; 8.4 MILIDETIK</span>
+<span class="text-secondary flex items-center gap-0.5">OTONOM <span class="w-1.5 h-1.5 bg-secondary rounded-full"></span></span>
+</div>
+</div>
+<!-- Module 03 -->
+<div class="bg-surface-container-lowest border border-outline-variant p-pad-lg flex flex-col justify-between hover:border-primary transition-all duration-200 group relative">
+<div class="absolute top-2 right-2 text-outline-variant font-label-telemetry text-[10px] group-hover:text-primary">MOD-03</div>
+<div>
+<div class="w-10 h-10 border border-tertiary-container/40 bg-surface-container flex items-center justify-center mb-pad-md group-hover:bg-tertiary-container/10 transition-colors">
+<span class="material-symbols-outlined text-tertiary-container text-xl" data-icon="satellite_alt">satellite_alt</span>
+</div>
+<span class="font-label-badge text-label-badge text-tertiary-container uppercase tracking-widest block mb-1">KOMANDO LINTAS MATRA</span>
+<h3 class="font-headline-sm text-headline-sm font-bold uppercase mb-pad-sm text-on-surface">
+              Arsitektur C4ISR &amp; Satelit Uplink
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-pad-md leading-relaxed">
+              Sinkronisasi komando taktis multi-domain darat, laut, udara, dan orbit antariksa dengan jalur data terenkripsi anti-intersepsi berkecepatan tinggi.
+            </p>
+</div>
+<div class="pt-pad-sm border-t border-outline-variant/60 flex items-center justify-between font-label-telemetry text-label-telemetry">
+<span class="text-on-surface-variant">SINKRONISASI: MIL-SAT 09</span>
+<span class="text-tertiary-container flex items-center gap-0.5">ONLINE <span class="w-1.5 h-1.5 bg-tertiary-container rounded-full"></span></span>
+</div>
+</div>
+<!-- Module 04 -->
+<div class="bg-surface-container-lowest border border-outline-variant p-pad-lg flex flex-col justify-between hover:border-primary transition-all duration-200 group relative">
+<div class="absolute top-2 right-2 text-outline-variant font-label-telemetry text-[10px] group-hover:text-primary">MOD-04</div>
+<div>
+<div class="w-10 h-10 border border-primary/40 bg-surface-container flex items-center justify-center mb-pad-md group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="key">key</span>
+</div>
+<span class="font-label-badge text-label-badge text-primary uppercase tracking-widest block mb-1">KRIPTOGRAFI PASCA-KUANTUM</span>
+<h3 class="font-headline-sm text-headline-sm font-bold uppercase mb-pad-sm text-on-surface">
+              Enkripsi Kuantum &amp; Zero-Trust Core
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-pad-md leading-relaxed">
+              Otentikasi biometrik bertingkat, segmentasi mikro dinamis, dan pertukaran kunci kriptografi kristal kisi (lattice cryptography) tanpa celah kompromi.
+            </p>
+</div>
+<div class="pt-pad-sm border-t border-outline-variant/60 flex items-center justify-between font-label-telemetry text-label-telemetry">
+<span class="text-on-surface-variant">STANDAR: NIST PQC-KYBER</span>
+<span class="text-primary flex items-center gap-0.5">TERKUNCI <span class="w-1.5 h-1.5 bg-primary rounded-full"></span></span>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3: GLOBAL TACTICAL GRID & OPERATIONS CONSOLE SHOWCASE -->
+<section class="space-y-pad-md bg-surface-container-lowest border border-outline-variant p-pad-lg md:p-pad-xl relative" id="topology">
+<!-- Coordinate pips -->
+<div class="flex items-center justify-between border-b border-outline-variant pb-pad-sm">
+<div class="flex items-center gap-3">
+<span class="w-2.5 h-2.5 bg-primary-container"></span>
+<h2 class="font-headline-sm text-headline-sm uppercase font-bold tracking-wider text-on-surface">
+            MATRIKS PENGAWASAN TOPOLOGI GLOBAL // SEKTOR INDO-PASIFIK
+          </h2>
+</div>
+<div class="hidden sm:flex items-center gap-4 font-label-telemetry text-label-telemetry text-on-surface-variant">
+<span class="flex items-center gap-1.5"><span class="w-2 h-2 bg-primary inline-block"></span> SEKTOR AMAN</span>
+<span class="flex items-center gap-1.5"><span class="w-2 h-2 bg-tertiary-container inline-block"></span> WASPADA / PROBING</span>
+<span class="flex items-center gap-1.5"><span class="w-2 h-2 bg-error inline-block"></span> INTERSEPSI AKTIF</span>
+</div>
+</div>
+<!-- Main Operational Console Frame -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop mt-pad-md">
+<!-- Left: High-Tech Simulated Vector Map & Zone Status (8 Cols) -->
+<div class="lg:col-span-8 bg-surface-container-low border border-outline-variant p-pad-md relative min-h-[360px] flex flex-col justify-between overflow-hidden">
+<!-- Background Grid / Coordinate Overlay -->
+<div class="absolute inset-0 tactical-dots opacity-30 pointer-events-none"></div>
+<!-- Zone Indicators Overlay -->
+<div class="flex justify-between items-start z-10">
+<div class="bg-surface-container/90 border border-outline-variant p-2 font-label-telemetry text-label-telemetry">
+<span class="text-primary font-bold">KONSOL AKTIF: CMD-AEGIS-NODE-ALPHA</span>
+<div class="text-outline">LATENCY: 0.8ms // BANDWIDTH: 400 Gbps TERADEDIKASI</div>
+</div>
+<div class="bg-surface-container/90 border border-outline-variant p-2 text-right font-label-telemetry text-label-telemetry">
+<span class="text-on-surface font-bold">SINKRONISASI SATELIT</span>
+<div class="text-primary">ELEVASI: 78.4° // AZIMUTH: 182.1°</div>
+</div>
+</div>
+<!-- Graphic Nodes Simulation -->
+<div class="relative my-auto py-8 grid grid-cols-2 sm:grid-cols-3 gap-4 z-10">
+<!-- Node Alpha -->
+<div class="border border-primary/40 bg-surface-container-lowest/80 p-3 relative">
+<span class="absolute -top-1 -right-1 w-2 h-2 bg-primary"></span>
+<div class="flex items-center justify-between text-label-badge text-label-badge text-primary mb-1">
+<span>NODE JAKARTA-01</span>
+<span>ONLINE</span>
+</div>
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface">99.99%</div>
+<div class="font-label-telemetry text-[10px] text-outline mt-1">INTELIJEN SIBER SENTRAL</div>
+</div>
+<!-- Node Bravo -->
+<div class="border border-tertiary-container/40 bg-surface-container-lowest/80 p-3 relative">
+<span class="absolute -top-1 -right-1 w-2 h-2 bg-tertiary-container"></span>
+<div class="flex items-center justify-between text-label-badge text-label-badge text-tertiary-container mb-1">
+<span>NODE NATUNA-03</span>
+<span>WASPADA</span>
+</div>
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface">98.42%</div>
+<div class="font-label-telemetry text-[10px] text-outline mt-1">RADAR MARITIM ELEKTRONIK</div>
+</div>
+<!-- Node Charlie -->
+<div class="border border-primary/40 bg-surface-container-lowest/80 p-3 relative">
+<span class="absolute -top-1 -right-1 w-2 h-2 bg-primary"></span>
+<div class="flex items-center justify-between text-label-badge text-label-badge text-primary mb-1">
+<span>NODE SURABAYA-02</span>
+<span>ONLINE</span>
+</div>
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface">100.0%</div>
+<div class="font-label-telemetry text-[10px] text-outline mt-1">BASIS KOMANDO ARMADA</div>
+</div>
+<!-- Node Delta -->
+<div class="border border-error/50 bg-surface-container-lowest/80 p-3 relative sm:col-start-1">
+<span class="absolute -top-1 -right-1 w-2 h-2 bg-error animate-ping"></span>
+<div class="flex items-center justify-between text-label-badge text-label-badge text-error mb-1">
+<span>NODE BIAK-05</span>
+<span>INTERSEPSI</span>
+</div>
+<div class="font-headline-sm text-headline-sm font-bold text-error">MITIGASI</div>
+<div class="font-label-telemetry text-[10px] text-outline mt-1">STASIUN TELEMETRI SATELIT</div>
+</div>
+<!-- Node Echo -->
+<div class="border border-primary/40 bg-surface-container-lowest/80 p-3 relative sm:col-span-2">
+<span class="absolute -top-1 -right-1 w-2 h-2 bg-primary"></span>
+<div class="flex items-center justify-between text-label-badge text-label-badge text-primary mb-1">
+<span>NODE IKN-NUSANTARA [HQ]</span>
+<span>DIPROTEKSI TOTAL</span>
+</div>
+<div class="font-headline-sm text-headline-sm font-bold text-primary">PERISAI ZERO-TRUST TINGKAT 5</div>
+<div class="font-label-telemetry text-[10px] text-outline mt-1">KOMANDO OPERASI GABUNGAN PERTAHANAN</div>
+</div>
+</div>
+<!-- Bottom Coordinates Bar -->
+<div class="z-10 pt-pad-sm border-t border-outline-variant/60 flex flex-wrap justify-between items-center font-label-telemetry text-label-telemetry text-on-surface-variant">
+<span>GRID: MIL-MGRS 48M XM 1294 9284</span>
+<span class="text-primary">SATELIT AKTIF: OPTUS-4 // GARUDA-2B // AEGIS-DEF-1</span>
+</div>
+</div>
+<!-- Right: Live Interception Incident Logs (4 Cols) -->
+<div class="lg:col-span-4 bg-surface-container-lowest border border-outline-variant p-pad-md flex flex-col justify-between" id="logs">
+<div>
+<div class="flex items-center justify-between pb-pad-sm border-b border-outline-variant mb-pad-sm">
+<span class="font-label-badge text-label-badge text-primary uppercase tracking-wider">LOG INTERSEPSI MILITER</span>
+<span class="font-label-telemetry text-[10px] text-outline">AUTO-REFRESH: 1s</span>
+</div>
+<div class="space-y-2.5 font-label-telemetry text-label-telemetry">
+<div class="p-2 bg-surface-container border-l-2 border-primary">
+<div class="flex justify-between text-[10px] text-outline mb-0.5">
+<span>08:44:02 UTC</span>
+<span class="text-primary">SEKTOR 02</span>
+</div>
+<div class="text-on-surface font-semibold">APT-29 HEURISTIC MATCH</div>
+<div class="text-[11px] text-on-surface-variant">Injeksi payload buffer overflow diblokir pada gateway taktis maritim.</div>
+</div>
+<div class="p-2 bg-surface-container border-l-2 border-tertiary-container">
+<div class="flex justify-between text-[10px] text-outline mb-0.5">
+<span>08:42:19 UTC</span>
+<span class="text-tertiary-container">SEKTOR 07</span>
+</div>
+<div class="text-on-surface font-semibold">PROBING SPEKTRUM RF</div>
+<div class="text-[11px] text-on-surface-variant">Pencarian frekuensi liar dihentikan oleh modul counter-jamming 4.88 GHz.</div>
+</div>
+<div class="p-2 bg-surface-container border-l-2 border-error">
+<div class="flex justify-between text-[10px] text-outline mb-0.5">
+<span>08:40:51 UTC</span>
+<span class="text-error">SEKTOR 05</span>
+</div>
+<div class="text-on-surface font-semibold">VOLUMETRIC SYN FLOOD</div>
+<div class="text-[11px] text-on-surface-variant">2.4 Tbps serangan terdistribusi dialihkan ke blackhole scrub perimeter.</div>
+</div>
+<div class="p-2 bg-surface-container border-l-2 border-primary">
+<div class="flex justify-between text-[10px] text-outline mb-0.5">
+<span>08:38:12 UTC</span>
+<span class="text-primary">CORE GATEWAY</span>
+</div>
+<div class="text-on-surface font-semibold">ROTASI KUNCI KUANTUM</div>
+<div class="text-[11px] text-on-surface-variant">Siklus pembaharuan 1024-bit Lattice Key selesai tanpa gangguan transmisi.</div>
+</div>
+</div>
+</div>
+<button class="w-full mt-pad-md py-2 border border-outline-variant hover:border-primary text-primary font-label-badge text-label-badge uppercase tracking-wider bg-surface-container/50 transition-colors">
+            UNDUH DOKUMENTASI LENGKAP (.ENC)
+          </button>
+</div>
+</div>
+</section>
+<!-- SECTION 4: PROTOCOLS & MIL-SPEC COMPLIANCE STANDARDS -->
+<section class="space-y-pad-lg">
+<div class="border-b border-outline-variant pb-pad-md">
+<span class="font-label-badge text-label-badge text-primary uppercase tracking-widest block mb-1">
+          STANDARISASI PERTAHANAN &amp; REGULASI
+        </span>
+<h2 class="font-headline-xl text-headline-xl font-bold uppercase tracking-tight text-on-surface">
+          KEPATUHAN MIL-SPEC &amp; PROTOKOL KEAMANAN TINGKAT TINGGI
+        </h2>
+</div>
+<!-- Standards Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter-desktop">
+<div class="bg-surface-container-lowest border border-outline-variant p-pad-md">
+<div class="text-primary font-label-badge text-label-badge mb-2">SERTIFIKASI 01</div>
+<h4 class="font-headline-sm text-headline-sm font-bold uppercase text-on-surface mb-2">NATO STANAG CYBER</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Interoperabilitas militer internasional sesuai arsitektur data pertahanan aliansi strategis dan standar proteksi perisai siber global.
+          </p>
+<div class="mt-4 pt-2 border-t border-outline-variant/60 font-label-telemetry text-[11px] text-primary">
+            STATUS: TERTETAPKAN &amp; TERVERIFIKASI
+          </div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant p-pad-md">
+<div class="text-secondary font-label-badge text-label-badge mb-2">SERTIFIKASI 02</div>
+<h4 class="font-headline-sm text-headline-sm font-bold uppercase text-on-surface mb-2">NIST SP 800-53 REV. 5</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Katalog kontrol keamanan informasi dan privasi federal terlengkap untuk sistem komputasi militer dan infrastruktur kritis nasional.
+          </p>
+<div class="mt-4 pt-2 border-t border-outline-variant/60 font-label-telemetry text-[11px] text-secondary">
+            STATUS: 100% KONTROL TERPENUHI
+          </div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant p-pad-md">
+<div class="text-tertiary-container font-label-badge text-label-badge mb-2">SERTIFIKASI 03</div>
+<h4 class="font-headline-sm text-headline-sm font-bold uppercase text-on-surface mb-2">CMMC LEVEL 3 DEFENSE</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Standar kematangan kapabilitas pertahanan siber militer tertinggi untuk menangani Informasi Pertahanan Tidak Terklasifikasi Terkendali (CUI).
+          </p>
+<div class="mt-4 pt-2 border-t border-outline-variant/60 font-label-telemetry text-[11px] text-tertiary-container">
+            STATUS: AUDIT RESMI MIL-SPEC
+          </div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant p-pad-md">
+<div class="text-primary font-label-badge text-label-badge mb-2">SERTIFIKASI 04</div>
+<h4 class="font-headline-sm text-headline-sm font-bold uppercase text-on-surface mb-2">QUANTUM RESILIENT CORE</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Arsitektur pertahanan anti-komputasi kuantum dengan enkripsi berbasis lattice yang dirancang untuk mencegah dekripsi retrospektif di masa depan.
+          </p>
+<div class="mt-4 pt-2 border-t border-outline-variant/60 font-label-telemetry text-[11px] text-primary">
+            STATUS: POST-QUANTUM ACTIVE
+          </div>
+</div>
+</div>
+<!-- Operational Readiness Metrics Ribbon -->
+<div class="bg-surface-container-low border border-outline-variant p-pad-lg grid grid-cols-1 md:grid-cols-3 gap-gutter-desktop">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container border border-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="timer">timer</span>
+</div>
+<div>
+<div class="font-headline-lg text-headline-lg font-bold text-primary">&lt; 30 ms</div>
+<div class="font-label-telemetry text-label-telemetry text-on-surface-variant">WAKTU TANGGAP DARURAT SIBER</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container border border-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary text-2xl" data-icon="verified_user">verified_user</span>
+</div>
+<div>
+<div class="font-headline-lg text-headline-lg font-bold text-secondary">99.999%</div>
+<div class="font-label-telemetry text-label-telemetry text-on-surface-variant">UPTIME OPERASIONAL KONSOL KOMANDO</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container border border-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="shield">shield</span>
+</div>
+<div>
+<div class="font-headline-lg text-headline-lg font-bold text-primary">100%</div>
+<div class="font-label-telemetry text-label-telemetry text-on-surface-variant">ISOLASI INSIDEN ANCAMAN OTOMATIS</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 5: TACTICAL COMMAND CTA SECTOR -->
+<section class="bg-surface-container-lowest border-2 border-primary/60 p-pad-xl relative overflow-hidden" id="console">
+<!-- Chamfered accent styling -->
+<div class="absolute top-0 right-0 w-8 h-8 bg-surface-dim border-b-2 border-l-2 border-primary rotate-45 translate-x-4 -translate-y-4"></div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-center relative z-10">
+<div class="lg:col-span-8 space-y-pad-sm">
+<div class="inline-flex items-center gap-2 font-label-badge text-label-badge text-primary">
+<span class="material-symbols-outlined text-sm" data-icon="lock">lock</span>
+            OTENTIKASI CLEARANCE KHUSUS INSTITUSI PERTAHANAN
+          </div>
+<h2 class="font-headline-xl text-headline-xl font-bold uppercase tracking-tight text-on-surface">
+            SIAPKAN PROTOKOL PERTAHANAN INFRASTRUKTUR STRATEGIS
+          </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+            Hubungkan pangkalan komando divisi, fasilitas energi nasional, atau armada operasi militer Anda ke dalam jaringan perisai siber terpadu AEGIS Cyber Operations Command.
+          </p>
+</div>
+<!-- Clearance Input Form -->
+<div class="lg:col-span-4 bg-surface-container border border-outline-variant p-pad-md space-y-3">
+<label class="block font-label-telemetry text-label-telemetry text-on-surface-variant uppercase">
+            KODE OPERATOR // ID CLEARANCE MILITER
+          </label>
+<div class="relative">
+<span class="absolute left-3 top-2.5 font-label-telemetry text-primary text-label-data">CMD // &gt;</span>
+<input class="w-full bg-surface-container-lowest border border-outline-variant text-on-surface pl-16 pr-3 py-2 font-label-data text-label-data focus:border-primary focus:ring-0 focus:outline-none placeholder:text-outline-variant" placeholder="AUTH-SPEC-XXXX-XXXX" type="text"/>
+</div>
+<button class="w-full bg-primary-container hover:bg-primary text-on-primary font-label-data text-label-data font-bold py-3 uppercase tracking-wider transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-base" data-icon="fingerprint">fingerprint</span>
+            VERIFIKASI AKSES TAKTIS
+          </button>
+<div class="font-label-telemetry text-[10px] text-center text-outline">
+            SEMUA PERMINTAAN DIAWASI OLEH PROTOKOL KONTRA-INTELIJEN SIBER
+          </div>
+</div>
+</div>
+</section>
+</main>
+<!-- SHARED COMPONENT: Tactical Footer (Exact mapping of JSON) -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant dark:border-outline-variant docked full-width bottom mt-pad-3xl z-40">
+<div class="w-full max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop py-pad-lg flex flex-col md:flex-row justify-between items-center gap-pad-md">
+<!-- Brand Logo / Identity -->
+<div class="flex items-center gap-3">
+<div class="w-6 h-6 border border-primary flex items-center justify-center bg-surface-container-low">
+<span class="material-symbols-outlined text-primary text-xs" data-icon="shield">shield</span>
+</div>
+<div class="font-label-badge text-label-badge text-primary dark:text-primary tracking-widest">
+          SYS.ID // 904-MIL-SPEC CLASSIFIED // ALL TELEMETRY ENCRYPTED 4096-BIT RSA
+        </div>
+</div>
+<!-- Links (Immutable string list from JSON) -->
+<nav class="flex flex-wrap items-center justify-center gap-6">
+<a class="text-primary dark:text-primary font-label-telemetry text-label-telemetry uppercase hover:underline font-label-telemetry text-label-telemetry" href="#protocols">
+          PROTOCOLS
+        </a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-label-telemetry text-label-telemetry uppercase hover:underline font-label-telemetry text-label-telemetry hover:text-primary dark:hover:text-primary transition-colors duration-150" href="#clearance">
+          CLEARANCE AUTH
+        </a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-label-telemetry text-label-telemetry uppercase hover:underline font-label-telemetry text-label-telemetry hover:text-primary dark:hover:text-primary transition-colors duration-150" href="#encryption">
+          ENCRYPTION KEYS
+        </a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-label-telemetry text-label-telemetry uppercase hover:underline font-label-telemetry text-label-telemetry hover:text-primary dark:hover:text-primary transition-colors duration-150" href="#topology">
+          NODE TOPOLOGY
+        </a>
+<a class="text-error font-label-telemetry text-label-telemetry uppercase hover:underline font-label-telemetry text-label-telemetry hover:text-error transition-colors duration-150" href="#abort">
+          ABORT SIGNAL
+        </a>
+</nav>
+</div>
+</footer>
+<!-- TACTICAL SCRIPT FOR UTC TIMEKEEPING -->
+<script>
+    function updateClock() {
+      const now = new Date();
+      const hours = String(now.getUTCHours()).padStart(2, '0');
+      const minutes = String(now.getUTCMinutes()).padStart(2, '0');
+      const seconds = String(now.getUTCSeconds()).padStart(2, '0');
+      const clockElement = document.getElementById('utc-clock');
+      if (clockElement) {
+        clockElement.textContent = `${hours}:${minutes}:${seconds} UTC`;
+      }
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
+</body></html>
