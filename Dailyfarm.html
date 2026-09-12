@@ -1,0 +1,1840 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omiebie Dairy Farm - Official Store Kambing & Susu Etawa</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- STYLING CSS -->
+    <style>
+        /* RESET & VARIABLES (Modern Farm Theme) */
+        :root {
+            --primary: #2E7D32;
+            --primary-dark: #1B5E20;
+            --primary-light: #4CAF50;
+            --accent: #F5F5DC;
+            --brown: #8D6E63;
+            --text-dark: #2C3E50;
+            --text-muted: #6C7A89;
+            --bg-light: #F9FBF9;
+            --white: #FFFFFF;
+            --border-color: #E2E8F0;
+            --danger: #E74C3C;
+            --shadow: 0 4px 12px rgba(46, 125, 50, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* HEADER & NAVBAR */
+        .header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 75px;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--brown);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-dark);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary);
+        }
+
+        .btn-nav-checkout {
+            background-color: var(--primary);
+            color: var(--white) !important;
+            padding: 8px 16px;
+            border-radius: 6px;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .cart-icon-btn {
+            position: relative;
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            padding: 8px;
+            transition: var(--transition);
+        }
+
+        .cart-icon-btn:hover {
+            color: var(--primary);
+        }
+
+        .cart-badge {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: var(--danger);
+            color: var(--white);
+            font-size: 0.7rem;
+            font-weight: 700;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            cursor: pointer;
+        }
+
+        /* HERO SECTION & SLIDER OTOMATIS */
+        .hero-section {
+            padding: 60px 0;
+            background: linear-gradient(135deg, #F5F5DC 0%, #E8F5E9 100%);
+        }
+
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .badge-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(46, 125, 50, 0.1);
+            color: var(--primary);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .hero-text h1 {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+        }
+
+        .hero-text p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 25px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        /* Styling Hero Slider (Berganti setiap 2 detik) */
+        .hero-slider {
+            position: relative;
+            width: 100%;
+            height: 380px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            background: #e2e8f0;
+        }
+
+        .hero-slider img.slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.6s ease-in-out;
+        }
+
+        .hero-slider img.slide.active {
+            opacity: 1;
+        }
+
+        /* SECTION TITLE */
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--primary-dark);
+            margin-bottom: 8px;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+        }
+
+        /* TENTANG KAMI */
+        .about-section {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-info h3 {
+            font-size: 1.6rem;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+        }
+
+        .store-location, .store-hours {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .store-desc {
+            margin: 20px 0;
+            color: var(--text-dark);
+        }
+
+        .features-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+            color: var(--primary-dark);
+            font-weight: 500;
+        }
+
+        .feature-item i {
+            color: var(--primary-light);
+        }
+
+        .social-buttons-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: var(--white);
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #1EBE5D;
+        }
+
+        .btn-instagram {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            color: var(--white);
+        }
+
+        .btn-instagram:hover {
+            opacity: 0.9;
+        }
+
+        .btn-tiktok {
+            background-color: #000000;
+            color: var(--white);
+        }
+
+        .btn-tiktok:hover {
+            background-color: #222222;
+        }
+
+        .about-stats-card {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            background: var(--bg-light);
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 15px;
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        .stat-box h4 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .stat-box p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* KATALOG PRODUK */
+        .catalog-section {
+            padding: 80px 0;
+        }
+
+        .filter-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .search-box {
+            position: relative;
+            max-width: 500px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 12px 20px 12px 45px;
+            border-radius: 30px;
+            border: 1px solid var(--border-color);
+            background: var(--white);
+            outline: none;
+            font-size: 0.95rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .search-box input:focus {
+            border-color: var(--primary);
+        }
+
+        .category-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .filter-btn {
+            padding: 8px 18px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            background: var(--white);
+            color: var(--text-dark);
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition);
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        }
+
+        .product-img-wrapper {
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+            background: #eee;
+        }
+
+        .product-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .product-card:hover .product-img-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .product-category-tag {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(0,0,0,0.6);
+            color: var(--white);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .product-info {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .product-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 6px;
+        }
+
+        .product-variant-size {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+        }
+
+        .product-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+
+        .product-price-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .current-price {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .original-price {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-decoration: line-through;
+        }
+
+        .quantity-action-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .qty-control {
+            display: flex;
+            align-items: center;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .qty-btn {
+            background: #f1f5f9;
+            border: none;
+            width: 32px;
+            height: 32px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .qty-btn:hover {
+            background: #e2e8f0;
+        }
+
+        .qty-input {
+            width: 38px;
+            text-align: center;
+            border: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            outline: none;
+            background: transparent;
+        }
+
+        .btn-add-cart {
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 8px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-add-cart:hover {
+            background: var(--primary-dark);
+        }
+
+        /* SHOPPING CART SECTION */
+        .cart-section {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .cart-table-wrapper {
+            overflow-x: auto;
+            margin-bottom: 30px;
+        }
+
+        .cart-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 650px;
+        }
+
+        .cart-table th, .cart-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .cart-table th {
+            background: var(--bg-light);
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .cart-item-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .cart-item-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .cart-item-title {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+        }
+
+        .cart-item-variant {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .btn-remove-item {
+            background: none;
+            border: none;
+            color: var(--danger);
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-remove-item:hover {
+            opacity: 0.7;
+        }
+
+        .cart-summary-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--bg-light);
+            padding: 20px 30px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .cart-total-text {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+
+        .empty-cart-state {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .empty-cart-state i {
+            font-size: 3.5rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+
+        .empty-cart-state h3 {
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .empty-cart-state p {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        /* CHECKOUT SECTION */
+        .checkout-section {
+            padding: 80px 0;
+        }
+
+        .checkout-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 30px;
+        }
+
+        .checkout-form-card, .checkout-summary-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+        }
+
+        .checkout-form-card h3, .checkout-summary-card h3 {
+            font-size: 1.2rem;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+
+        .required {
+            color: var(--danger);
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            outline: none;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: var(--primary);
+        }
+
+        .checkout-summary-items {
+            max-height: 250px;
+            overflow-y: auto;
+            margin-bottom: 20px;
+        }
+
+        .summary-item-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .summary-item-desc span {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .checkout-total-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.1rem;
+            background: var(--bg-light);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .checkout-total-box strong {
+            color: var(--primary);
+            font-size: 1.3rem;
+        }
+
+        .error-msg-box {
+            background: #FDEDEC;
+            color: var(--danger);
+            padding: 10px 15px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            margin-bottom: 15px;
+            border: 1px solid #F5B7B1;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .btn-whatsapp-checkout {
+            width: 100%;
+            background-color: #25D366;
+            color: var(--white);
+            padding: 14px;
+            font-size: 1rem;
+        }
+
+        .btn-whatsapp-checkout:hover {
+            background-color: #1EBE5D;
+        }
+
+        /* FOOTER */
+        .footer {
+            background: #1A2E1C;
+            color: var(--white);
+            padding: 60px 0 20px 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            color: var(--white) !important;
+            margin-bottom: 15px;
+        }
+
+        .footer-col p {
+            color: #A3B1A4;
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #A3B1A4;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+            padding-left: 5px;
+        }
+
+        .footer-social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .footer-social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .footer-social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            color: #A3B1A4;
+            font-size: 0.85rem;
+        }
+
+        /* BACK TO TOP */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary);
+            color: var(--white);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--primary-dark);
+        }
+
+        /* TOAST NOTIFICATION */
+        .toast-notification {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: #2C3E50;
+            color: var(--white);
+            padding: 12px 24px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+            z-index: 2000;
+        }
+
+        .toast-notification.show {
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .toast-notification i {
+            color: var(--primary-light);
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 992px) {
+            .hero-container, .about-grid, .checkout-grid, .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.1rem;
+            }
+
+            .hero-slider {
+                height: 280px;
+            }
+
+            .footer-grid {
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: absolute;
+                top: 75px;
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 20px 30px;
+                box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+                display: none;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER & NAVIGASI -->
+    <header class="header">
+        <div class="container navbar">
+            <a href="#beranda" class="logo">
+                <i class="fa-solid fa-cow"></i> Omiebie<span>Dairy Farm</span>
+            </a>
+            <nav class="nav-links" id="navLinks">
+                <a href="#beranda" class="active">Beranda</a>
+                <a href="#katalog">Katalog Produk</a>
+                <a href="#tentang">Tentang Kami</a>
+                <a href="#keranjang">Keranjang</a>
+                <a href="#checkout" class="btn-nav-checkout">Checkout</a>
+            </nav>
+            <div class="nav-right">
+                <a href="#keranjang" class="cart-icon-btn" aria-label="Keranjang Belanja">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-badge" id="cartBadge">0</span>
+                </a>
+                <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- KONTEN UTAMA -->
+    <main>
+
+        <!-- HERO SECTION DENGAN SLIDER OTOMATIS (2 DETIK) -->
+        <section id="beranda" class="hero-section">
+            <div class="container hero-container">
+                <div class="hero-text">
+                    <span class="badge-pill"><i class="fa-solid fa-shield-halved"></i> Peternakan Terverifikasi & Higienis</span>
+                    <h1>Official Store Kambing & Produk Susu Etawa</h1>
+                    <p>Pilihan Kambing Berkualitas dan Produk Olahan Susu Kambing untuk Kebutuhan Gizi & Peternakan Anda.</p>
+                    <div class="hero-buttons">
+                        <a href="#katalog" class="btn btn-primary">Belanja Sekarang</a>
+                        <a href="#tentang" class="btn btn-outline">Lihat Produk</a>
+                    </div>
+                </div>
+                
+                <!-- Hero Slider Berganti Tiap 2 Detik -->
+                <div class="hero-image">
+                    <div class="hero-slider" id="heroSlider">
+                        <img src="omiebie.png" alt="Peternakan Omiebie 1" class="slide active">
+                        <img src="kambing1.png" alt="Kambing Etawa Unggulan" class="slide">
+                        <img src="susu.png" alt="Susu Kambing Etawa Segar" class="slide">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TENTANG KAMI -->
+        <section id="tentang" class="about-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Tentang Official Store</h2>
+                    <p>Mengenal lebih dekat peternakan dan komitmen kualitas kami</p>
+                </div>
+                <div class="about-grid">
+                    <div class="about-info">
+                        <h3>Omiebie Dairy Farm Mojokerto</h3>
+                        <p class="store-location"><i class="fa-solid fa-location-dot"></i> Dsn. Ngembul RT. 14 RW. 006 Ds. Kepuh Klagen, Wringinanom, Gresik, Jawa Timur</p>
+                        <p class="store-hours"><i class="fa-solid fa-clock"></i> Jam Pelayanan: Senin - Minggu (08.00 - 17.00 WIB)</p>
+                        <p class="store-desc">Kami adalah peternakan mandiri yang berfokus pada pembibitan kambing unggulan serta pengolahan susu kambing Etawa murni berstandar higienis tinggi tanpa bahan pengawet.</p>
+                        
+                        <div class="features-list">
+                            <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Kambing berkualitas & sehat</div>
+                            <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Produk susu segar setiap hari</div>
+                            <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Pengolahan higienis & steril</div>
+                            <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Pelayanan terpercaya & ramah</div>
+                            <div class="feature-item"><i class="fa-solid fa-circle-check"></i> Pemesanan mudah melalui WhatsApp</div>
+                        </div>
+
+                        <!-- Tombol Kontak & Media Sosial -->
+                        <div class="social-buttons-group">
+                            <a href="https://wa.me/6281234026575?text=Halo%20Admin,%20saya%20ingin%20berkonsultasi%20mengenai%20produk%20FarmStore%20Etawa." target="_blank" class="btn btn-whatsapp">
+                                <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                            </a>
+                            <a href="https://www.instagram.com/omiebiedairyfarm?stkn=MTh0OGxlNG16cjh3" target="_blank" class="btn btn-instagram">
+                                <i class="fa-brands fa-instagram"></i> Instagram
+                            </a>
+                            <a href="https://www.tiktok.com/@omiebieofficial?_r=1&_t=ZS-99f7NjSJyM5" target="_blank" class="btn btn-tiktok">
+                                <i class="fa-brands fa-tiktok"></i> TikTok
+                            </a>
+                        </div>
+                    </div>
+                    <div class="about-stats-card">
+                        <div class="stat-box">
+                            <h4>100%</h4>
+                            <p>Murni & Alami</p>
+                        </div>
+                        <div class="stat-box">
+                            <h4>10+</h4>
+                            <p>Tahun Pengalaman</p>
+                        </div>
+                        <div class="stat-box">
+                            <h4>5000+</h4>
+                            <p>Pelanggan Puas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- KATALOG PRODUK -->
+        <section id="katalog" class="catalog-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Katalog Produk Pilihan</h2>
+                    <p>Temukan kambing pilihan dan aneka olahan susu kambing berkualitas tinggi</p>
+                </div>
+
+                <!-- PENCARIAN & FILTER KATEGORI -->
+                <div class="filter-wrapper">
+                    <div class="search-box">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" id="searchInput" placeholder="Cari nama produk, kambing, susu...">
+                    </div>
+                    <div class="category-filters" id="categoryFilters">
+                        <button class="filter-btn active" data-category="all">Semua Produk</button>
+                        <button class="filter-btn" data-category="Kambing">🐐 Kambing</button>
+                        <button class="filter-btn" data-category="Susu Etawa">🥛 Susu Etawa</button>
+                        <button class="filter-btn" data-category="Produk Olahan">🧴 Produk Olahan</button>
+                    </div>
+                </div>
+
+                <!-- GRID PRODUK -->
+                <div class="product-grid" id="productGrid">
+                    <!-- Produk akan dirender secara dinamis via JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- SHOPPING CART SECTION -->
+        <section id="keranjang" class="cart-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Keranjang Belanja</h2>
+                    <p>Periksa kembali produk pilihan Anda sebelum melanjutkan ke checkout</p>
+                </div>
+                
+                <div class="cart-content-wrapper" id="cartContentWrapper">
+                    <!-- Dinamis: tabel keranjang atau empty state -->
+                </div>
+            </div>
+        </section>
+
+        <!-- HALAMAN CHECKOUT -->
+        <section id="checkout" class="checkout-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Checkout Pesanan</h2>
+                    <p>Lengkapi data pengiriman Anda untuk dikirimkan langsung via WhatsApp</p>
+                </div>
+
+                <div class="checkout-grid">
+                    <!-- Form Pemesan -->
+                    <div class="checkout-form-card">
+                        <h3>Data Pemesan</h3>
+                        <form id="checkoutForm">
+                            <div class="form-group">
+                                <label for="buyerName">Nama Lengkap <span class="required">*</span></label>
+                                <input type="text" id="buyerName" placeholder="Contoh: Budi Santoso">
+                            </div>
+                            <div class="form-group">
+                                <label for="buyerPhone">Nomor WhatsApp <span class="required">*</span></label>
+                                <input type="tel" id="buyerPhone" placeholder="Contoh: 08123456789">
+                            </div>
+                            <div class="form-group">
+                                <label for="buyerAddress">Alamat Lengkap <span class="required">*</span></label>
+                                <textarea id="buyerAddress" rows="3" placeholder="Nama Jalan, RT/RW, Kecamatan, Kota, Patokan..."></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="buyerNotes">Catatan Pesanan (Opsional)</label>
+                                <textarea id="buyerNotes" rows="2" placeholder="Contoh: Susu dikirim keadaan dingin, kambing jantan usia siap kurban..."></textarea>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Ringkasan Pesanan Checkout -->
+                    <div class="checkout-summary-card">
+                        <h3>Ringkasan Pesanan</h3>
+                        <div id="checkoutSummaryItems" class="checkout-summary-items">
+                            <!-- Dinamis via JS -->
+                        </div>
+                        <div class="checkout-total-box">
+                            <span>Total Pembayaran:</span>
+                            <strong id="checkoutGrandTotal">Rp 0</strong>
+                        </div>
+                        <div id="checkoutErrorMsg" class="error-msg-box hidden"></div>
+                        <button type="button" id="btnSendWhatsApp" class="btn btn-whatsapp-checkout">
+                            <i class="fa-brands fa-whatsapp"></i> Kirim Pesanan via WhatsApp
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <a href="#beranda" class="logo footer-logo">
+                    <i class="fa-solid fa-cow"></i> Omiebie<span>Dairy Farm</span>
+                </a>
+                <p>Official store peternakan kambing & produk olahan susu Etawa murni kualitas premium terpercaya.</p>
+                
+                <!-- Ikon Sosial Media di Footer -->
+                <div class="footer-social-links">
+                    <a href="https://www.instagram.com/omiebiedairyfarm?stkn=MTh0OGxlNG16cjh3" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@omiebieofficial?_r=1&_t=ZS-99f7NjSJyM5" target="_blank" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://wa.me/6281234036575" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Menu Cepat</h4>
+                <ul>
+                    <li><a href="#beranda">Beranda</a></li>
+                    <li><a href="#katalog">Katalog Produk</a></li>
+                    <li><a href="#tentang">Tentang Kami</a></li>
+                    <li><a href="#keranjang">Keranjang</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Kategori</h4>
+                <ul>
+                    <li><a href="#katalog">Kambing Unggulan</a></li>
+                    <li><a href="#katalog">Susu Etawa Segar</a></li>
+                    <li><a href="#katalog">Sabun & Perawatan</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Kontak & Lokasi</h4>
+                <p><i class="fa-solid fa-location-dot"></i> Mojokerto, Jawa Timur</p>
+                <p><i class="fa-solid fa-phone"></i> +62 812-3402-6575</p>
+                <p><i class="fa-solid fa-clock"></i> Buka Setiap Hari (08.00 - 17.00)</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Omiebie Dairy Farm. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- TOMBOL BACK TO TOP -->
+    <button id="backToTopBtn" class="back-to-top" aria-label="Kembali ke atas">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="toastNotification" class="toast-notification">
+        <i class="fa-solid fa-circle-check"></i>
+        <span id="toastMessage">Produk berhasil ditambahkan ke keranjang!</span>
+    </div>
+
+    <!-- SCRIPT JAVASCRIPT -->
+    <script>
+        // ================= CONFIGURASI & DATA PRODUK =================
+        const WHATSAPP_SELLER_NUMBER = "6281234026575"; // Nomor WhatsApp Penjual
+
+        const productsData = [
+            // KATEGORI KAMBING
+            {
+                id: "kambing-etawa-super",
+                name: "Kambing Etawa Super",
+                category: "Kambing",
+                variant: "Ras Rasional Unggulan",
+                size: "Berat: 35-40 kg",
+                weight: 38,
+                price: 4200000,
+                promoPrice: 3800000,
+                image: "kambing1.png",
+                stock: 15,
+                description: "Kambing Etawa pilihan kualitas terbaik, sehat, aktif, dan siap untuk kurban atau breeding."
+            },
+            {
+                id: "kambing-peranakan-etawa",
+                name: "Kambing Peranakan Etawa (PE)",
+                category: "Kambing",
+                variant: "PE Standar",
+                size: "Berat: 25-30 kg",
+                weight: 28,
+                price: 3200000,
+                promoPrice: 0,
+                image: "kambing2.png",
+                stock: 20,
+                description: "Kambing PE lincah, perawatan mudah, cocok untuk investasi ternak maupun aqiqah."
+            },
+
+            // KATEGORI SUSU ETAWA (CAIR & BUBUK)
+            {
+                id: "susu-cair-original-250",
+                name: "Susu Kambing Etawa Cair",
+                category: "Susu Etawa",
+                variant: "Original",
+                size: "250 ml",
+                weight: 0.25,
+                price: 15000,
+                promoPrice: 0,
+                image: "susu.png",
+                stock: 100,
+                description: "Susu kambing murni segar higienis ukuran 250 ml tanpa pengawet."
+            },
+            {
+                id: "susu-cair-cokelat-250",
+                name: "Susu Kambing Etawa Cair",
+                category: "Susu Etawa",
+                variant: "Cokelat",
+                size: "250 ml",
+                weight: 0.25,
+                price: 17000,
+                promoPrice: 15000,
+                image: "susu.png",
+                stock: 80,
+                description: "Susu kambing segar varian rasa cokelat lezat yang disukai anak-anak."
+            },
+            {
+                id: "susu-cair-strawberry-250",
+                name: "Susu Kambing Etawa Cair",
+                category: "Susu Etawa",
+                variant: "Strawberry",
+                size: "250 ml",
+                weight: 0.25,
+                price: 17000,
+                promoPrice: 0,
+                image: "susu.png",
+                stock: 75,
+                description: "Susu kambing segar dengan ekstrak buah strawberry alami yang menyegarkan."
+            },
+            
+            // KATEGORI PRODUK OLAHAN
+            {
+                id: "sabun-susu-kambing",
+                name: "Sabun Susu Kambing Etawa",
+                category: "Produk Olahan",
+                variant: "Natural Herb",
+                size: "100 gram",
+                weight: 0.1,
+                price: 25000,
+                promoPrice: 20000,
+                image: "sabunbatang2.jpg",
+                stock: 120,
+                description: "Sabun pembersih kulit berbahan dasar susu kambing untuk melembapkan dan mencerahkan kulit."
+            },
+            {
+                id: "handbody-susu-kambing",
+                name: "Handbody Lotion Susu Kambing",
+                category: "Produk Olahan",
+                variant: "Moisturizing",
+                size: "250 ml",
+                weight: 0.25,
+                price: 45000,
+                promoPrice: 0,
+                image: "bodyserum.png",
+                stock: 90,
+                description: "Lotion pelembap tubuh kaya vitamin A & E dari ekstrak susu kambing murni."
+            },
+            {
+                id: "serum-susu-kambing",
+                name: "Serum Wajah Susu Kambing",
+                category: "Produk Olahan",
+                variant: "Anti Aging & Glow",
+                size: "30 ml",
+                weight: 0.05,
+                price: 75000,
+                promoPrice: 65000,
+                image: "bodyserum.png",
+                stock: 45,
+                description: "Serum bernutrisi tinggi untuk regenerasi kulit wajah tampak lebih sehat dan glowing."
+            }
+        ];
+
+        // ================= STATE MANAGEMENT =================
+        let cart = [];
+        try {
+            const savedCart = localStorage.getItem('omiebie_cart');
+            if (savedCart) {
+                cart = JSON.parse(savedCart);
+            }
+        } catch (e) {
+            console.error("Gagal membaca localStorage:", e);
+        }
+
+        // ================= DOM ELEMENTS =================
+        const navLinks = document.getElementById('navLinks');
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const productGrid = document.getElementById('productGrid');
+        const searchInput = document.getElementById('searchInput');
+        const categoryFilters = document.getElementById('categoryFilters');
+        const cartBadge = document.getElementById('cartBadge');
+        const cartContentWrapper = document.getElementById('cartContentWrapper');
+        const checkoutSummaryItems = document.getElementById('checkoutSummaryItems');
+        const checkoutGrandTotal = document.getElementById('checkoutGrandTotal');
+        const btnSendWhatsApp = document.getElementById('btnSendWhatsApp');
+        const checkoutErrorMsg = document.getElementById('checkoutErrorMsg');
+        const backToTopBtn = document.getElementById('backToTopBtn');
+        const toastNotification = document.getElementById('toastNotification');
+        const toastMessage = document.getElementById('toastMessage');
+
+        // ================= INISIALISASI APLIKASI =================
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProducts(productsData);
+            updateCartUI();
+            initEventListeners();
+            initHeroSlider(); // Menjalankan slider otomatis 2 detik
+        });
+
+        // ================= HERO SLIDER OTOMATIS (2 DETIK) =================
+        function initHeroSlider() {
+            const slides = document.querySelectorAll("#heroSlider img.slide");
+            let currentSlide = 0;
+
+            if (slides.length > 0) {
+                setInterval(() => {
+                    slides[currentSlide].classList.remove("active");
+                    currentSlide = (currentSlide + 1) % slides.length;
+                    slides[currentSlide].classList.add("active");
+                }, 2000); // 2000 ms = 2 detik
+            }
+        }
+
+        // ================= EVENT LISTENERS =================
+        function initEventListeners() {
+            hamburgerBtn.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                });
+            });
+
+            searchInput.addEventListener('input', (e) => {
+                const keyword = e.target.value.toLowerCase();
+                const activeCategory = document.querySelector('.filter-btn.active').dataset.category;
+                filterAndRenderProducts(activeCategory, keyword);
+            });
+
+            categoryFilters.addEventListener('click', (e) => {
+                if (e.target.classList.contains('filter-btn')) {
+                    document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+                    e.target.classList.add('active');
+                    const category = e.target.dataset.category;
+                    const keyword = searchInput.value.toLowerCase();
+                    filterAndRenderProducts(category, keyword);
+                }
+            });
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    backToTopBtn.classList.add('show');
+                } else {
+                    backToTopBtn.classList.remove('show');
+                }
+            });
+
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            btnSendWhatsApp.addEventListener('click', handleWhatsAppCheckout);
+        }
+
+        // ================= FILTER & RENDER KATALOG =================
+        function filterAndRenderProducts(category, keyword) {
+            let filtered = productsData;
+
+            if (category !== 'all') {
+                filtered = filtered.filter(p => p.category === category);
+            }
+
+            if (keyword) {
+                filtered = filtered.filter(p => 
+                    p.name.toLowerCase().includes(keyword) || 
+                    p.variant.toLowerCase().includes(keyword) ||
+                    p.description.toLowerCase().includes(keyword)
+                );
+            }
+
+            renderProducts(filtered);
+        }
+
+        function renderProducts(products) {
+            if (products.length === 0) {
+                productGrid.innerHTML = `
+                    <div style="grid-column: 1/-1; text-align: center; padding: 40px; color: var(--text-muted);">
+                        <i class="fa-solid fa-box-open" style="font-size: 2.5rem; margin-bottom: 10px;"></i>
+                        <p>Produk yang kamu cari tidak ditemukan.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            productGrid.innerHTML = products.map(product => {
+                const activePrice = product.promoPrice > 0 ? product.promoPrice : product.price;
+                return `
+                    <div class="product-card">
+                        <div class="product-img-wrapper">
+                            <span class="product-category-tag">${product.category}</span>
+                            <img src="${product.image}" alt="${product.name}" loading="lazy">
+                        </div>
+                        <div class="product-info">
+                            <h4 class="product-title">${product.name}</h4>
+                            <p class="product-variant-size">${product.variant} • ${product.size}</p>
+                            <p class="product-desc">${product.description}</p>
+                            
+                            <div class="product-price-box">
+                                <span class="current-price">${formatRupiah(activePrice)}</span>
+                                ${product.promoPrice > 0 ? `<span class="original-price">${formatRupiah(product.price)}</span>` : ''}
+                            </div>
+
+                            <div class="quantity-action-wrapper">
+                                <div class="qty-control">
+                                    <button class="qty-btn" onclick="adjustProductQty('${product.id}', -1)">-</button>
+                                    <input type="text" id="qty-${product.id}" class="qty-input" value="1" readonly>
+                                    <button class="qty-btn" onclick="adjustProductQty('${product.id}', 1)">+</button>
+                                </div>
+                                <button class="btn-add-cart" onclick="addToCart('${product.id}')">
+                                    <i class="fa-solid fa-cart-plus"></i> + Keranjang
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function adjustProductQty(productId, change) {
+            const inputEl = document.getElementById(`qty-${productId}`);
+            if (!inputEl) return;
+            let currentQty = parseInt(inputEl.value) || 1;
+            currentQty += change;
+            if (currentQty < 1) currentQty = 1;
+            
+            const product = productsData.find(p => p.id === productId);
+            if (product && currentQty > product.stock) {
+                currentQty = product.stock;
+                showToast(`Stok maksimal tersedia: ${product.stock}`);
+            }
+            
+            inputEl.value = currentQty;
+        }
+
+        // ================= FUNGSI KERANJANG BELANJA =================
+        function addToCart(productId) {
+            const product = productsData.find(p => p.id === productId);
+            const qtyInput = document.getElementById(`qty-${productId}`);
+            const quantity = qtyInput ? parseInt(qtyInput.value) || 1 : 1;
+
+            if (!product) return;
+
+            const existingIndex = cart.findIndex(item => item.id === productId);
+            if (existingIndex > -1) {
+                cart[existingIndex].quantity += quantity;
+                if (cart[existingIndex].quantity > product.stock) {
+                    cart[existingIndex].quantity = product.stock;
+                }
+            } else {
+                cart.push({
+                    id: product.id,
+                    name: product.name,
+                    variant: `${product.variant} (${product.size})`,
+                    price: product.promoPrice > 0 ? product.promoPrice : product.price,
+                    image: product.image,
+                    quantity: quantity
+                });
+            }
+
+            saveCartToLocalStorage();
+            updateCartUI();
+            showToast(`Berhasil menambahkan ${product.name} ke keranjang!`);
+
+            if (qtyInput) qtyInput.value = 1;
+        }
+
+        function updateCartItemQty(productId, change) {
+            const item = cart.find(i => i.id === productId);
+            if (!item) return;
+
+            item.quantity += change;
+            const product = productsData.find(p => p.id === productId);
+
+            if (item.quantity <= 0) {
+                removeFromCart(productId);
+                return;
+            }
+
+            if (product && item.quantity > product.stock) {
+                item.quantity = product.stock;
+                showToast(`Maksimal stok ${product.stock}`);
+            }
+
+            saveCartToLocalStorage();
+            updateCartUI();
+        }
+
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            saveCartToLocalStorage();
+            updateCartUI();
+            showToast("Produk dihapus dari keranjang.");
+        }
+
+        function saveCartToLocalStorage() {
+            try {
+                localStorage.setItem('omiebie_cart', JSON.stringify(cart));
+            } catch (e) {
+                console.error("Gagal menyimpan ke localStorage:", e);
+            }
+        }
+
+        function updateCartUI() {
+            const totalItemsCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartBadge.textContent = totalItemsCount;
+
+            if (cart.length === 0) {
+                cartContentWrapper.innerHTML = `
+                    <div class="empty-cart-state">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <h3>Keranjang Belanja Masih Kosong</h3>
+                        <p>Yuk, pilih kambing atau produk olahan susu berkualitas kami sekarang!</p>
+                        <a href="#katalog" class="btn btn-primary">Mulai Belanja</a>
+                    </div>
+                `;
+            } else {
+                let cartTableHTML = `
+                    <div class="cart-table-wrapper">
+                        <table class="cart-table">
+                            <thead>
+                                <tr>
+                                    <th>Produk</th>
+                                    <th>Harga Satuan</th>
+                                    <th>Jumlah</th>
+                                    <th>Subtotal</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                `;
+
+                cart.forEach(item => {
+                    const subtotal = item.price * item.quantity;
+                    cartTableHTML += `
+                        <tr>
+                            <td>
+                                <div class="cart-item-info">
+                                    <img src="${item.image}" alt="${item.name}" class="cart-item-img">
+                                    <div>
+                                        <div class="cart-item-title">${item.name}</div>
+                                        <div class="cart-item-variant">${item.variant}</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>${formatRupiah(item.price)}</td>
+                            <td>
+                                <div class="qty-control" style="width: 100px;">
+                                    <button class="qty-btn" onclick="updateCartItemQty('${item.id}', -1)">-</button>
+                                    <input type="text" class="qty-input" value="${item.quantity}" readonly>
+                                    <button class="qty-btn" onclick="updateCartItemQty('${item.id}', 1)">+</button>
+                                </div>
+                            </td>
+                            <td><strong>${formatRupiah(subtotal)}</strong></td>
+                            <td>
+                                <button class="btn-remove-item" onclick="removeFromCart('${item.id}')" aria-label="Hapus">
+                                    <i class="fa-solid fa-trash-can"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    `;
+                });
+
+                const grandTotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+                cartTableHTML += `
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="cart-summary-footer">
+                        <div class="cart-total-text">
+                            Total Keseluruhan: <span style="color: var(--primary);">${formatRupiah(grandTotal)}</span>
+                        </div>
+                        <a href="#checkout" class="btn btn-primary">Lanjut ke Checkout &rarr;</a>
+                    </div>
+                `;
+
+                cartContentWrapper.innerHTML = cartTableHTML;
+            }
+
+            updateCheckoutSummary();
+        }
+
+        // ================= CHECKOUT & WHATSAPP =================
+        function updateCheckoutSummary() {
+            if (cart.length === 0) {
+                checkoutSummaryItems.innerHTML = `<p style="color: var(--text-muted); text-align: center; font-size: 0.9rem;">Keranjang kosong.</p>`;
+                checkoutGrandTotal.textContent = formatRupiah(0);
+                return;
+            }
+
+            let summaryHTML = '';
+            let grandTotal = 0;
+
+            cart.forEach(item => {
+                const subtotal = item.price * item.quantity;
+                grandTotal += subtotal;
+                summaryHTML += `
+                    <div class="summary-item-row">
+                        <div class="summary-item-desc">
+                            <strong>${item.name}</strong>
+                            <span>${item.variant} (${item.quantity}x)</span>
+                        </div>
+                        <div>${formatRupiah(subtotal)}</div>
+                    </div>
+                `;
+            });
+
+            checkoutSummaryItems.innerHTML = summaryHTML;
+            checkoutGrandTotal.textContent = formatRupiah(grandTotal);
+        }
+
+        function handleWhatsAppCheckout() {
+            const name = document.getElementById('buyerName').value.trim();
+            const phone = document.getElementById('buyerPhone').value.trim();
+            const address = document.getElementById('buyerAddress').value.trim();
+            const notes = document.getElementById('buyerNotes').value.trim();
+
+            checkoutErrorMsg.classList.add('hidden');
+            checkoutErrorMsg.textContent = '';
+
+            if (cart.length === 0) {
+                showError("Keranjang belanja masih kosong. Silakan pilih produk terlebih dahulu.");
+                return;
+            }
+
+            if (!name) {
+                showError("Nama lengkap wajib diisi.");
+                document.getElementById('buyerName').focus();
+                return;
+            }
+
+            if (!phone) {
+                showError("Nomor WhatsApp wajib diisi.");
+                document.getElementById('buyerPhone').focus();
+                return;
+            }
+
+            const phoneRegex = /^[0-9]{9,15}$/;
+            const cleanPhone = phone.replace(/[^0-9]/g, '');
+            if (!phoneRegex.test(cleanPhone)) {
+                showError("Format nomor WhatsApp tidak valid. Masukkan hanya angka (9-15 digit).");
+                document.getElementById('buyerPhone').focus();
+                return;
+            }
+
+            if (!address) {
+                showError("Alamat lengkap wajib diisi untuk keperluan pengiriman.");
+                document.getElementById('buyerAddress').focus();
+                return;
+            }
+
+            let pesan = `Halo Admin Omiebie Dairy Farm, saya ingin melakukan pemesanan.\n\n`;
+            pesan += `*DATA PEMESAN*\n`;
+            pesan += `Nama: ${name}\n`;
+            pesan += `No. WhatsApp: ${phone}\n`;
+            pesan += `Alamat:\n${address}\n\n`;
+            
+            pesan += `*PESANAN:*\n`;
+            let grandTotal = 0;
+            cart.forEach((item, index) => {
+                const subtotal = item.price * item.quantity;
+                grandTotal += subtotal;
+                pesan += `${index + 1}. ${item.name} (${item.variant})\n`;
+                pesan += `   Jumlah: ${item.quantity} x ${formatRupiah(item.price)}\n`;
+                pesan += `   Subtotal: ${formatRupiah(subtotal)}\n`;
+            });
+
+            pesan += `\n*TOTAL PESANAN: ${formatRupiah(grandTotal)}*\n`;
+            
+            if (notes) {
+                pesan += `Catatan: ${notes}\n`;
+            }
+
+            pesan += `\nMohon informasi ketersediaan dan proses pengiriman. Terima kasih.`;
+
+            const encodedMessage = encodeURIComponent(pesan);
+            const waURL = `https://wa.me/${WHATSAPP_SELLER_NUMBER}?text=${encodedMessage}`;
+
+            window.open(waURL, '_blank');
+        }
+
+        function showError(msg) {
+            checkoutErrorMsg.textContent = msg;
+            checkoutErrorMsg.classList.remove('hidden');
+            checkoutErrorMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        // ================= UTILITIES =================
+        function formatRupiah(number) {
+            return new Intl.NumberFormat('id-ID', {
+                style: 'currency',
+                currency: 'IDR',
+                minimumFractionDigits: 0
+            }).format(number);
+        }
+
+        function showToast(message) {
+            toastMessage.textContent = message;
+            toastNotification.classList.add('show');
+            setTimeout(() => {
+                toastNotification.classList.remove('show');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
